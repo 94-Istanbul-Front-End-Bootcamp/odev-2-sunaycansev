@@ -42,14 +42,16 @@ const fetchData = () => {
 //verinin ul tag'i içerisinde listelenmesini sağlayan fonksiyon
 const listData = (data) => {
   let list = document.querySelector(".list");
-  list.innerHTML = data.map((element) => {
-    return `
+  list.innerHTML = data
+    .map((element) => {
+      return `
         <li id=${element.id}>
             <span class='bold'>name:</span> ${element.name}
             <span class='bold'>email:</span> ${element.email}
         </li>
         `;
-  });
+    })
+    .join("");
 };
 
 //verinin filtrelenmesini sağlayan fonksiyon
